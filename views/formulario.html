@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayStation</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Agregar jQuery -->
+    <script src="/JS/subidaForm.js"></script>
+    <script src="/JS/cp.js"></script>
+    <script src="/JS/login.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="/">
+                <img class="logo" src="/Images/pagina/play.png" alt="Logo">
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="#">Juegos</a></li>
+                    <li><a href="login">Ingresar</a></li>
+                    <li><a href="formulario">Formulario</a></li>
+                </ul>
+            </nav>
+            <!-- Contenedor de usuario (invisible hasta que inicie sesión) -->
+            <div id="usuario-info" style="display: none;" onclick="toggleUserMenu()">
+                <img id="foto-usuario" src="" alt="Foto de perfil">
+                <span id="nombre-usuario"></span>
+            </div>
+
+            <!-- Menú desplegable de usuario (invisible hasta que inicie sesión) -->
+            <div id="user-menu" style="display: none;">
+                <img id="foto-usuario-menu" src="" alt="Foto de perfil">
+                <span id="nombre-usuario-menu"></span>
+                <button onclick="redirigirPerfil()" id="editarPerfilBtn">Editar perfil</button>
+                <button id="cerrar-sesion" onclick="cerrarSesion()">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
+    <script>
+        function toggleMenu() {
+            const navList = document.querySelector('.nav-list');
+            navList.classList.toggle('show');
+        }
+        function redirigirPerfil() {
+            const nombreUsuario = document.getElementById('nombre-usuario').textContent;  // Obtener el nombre de usuario
+            window.location.href = `/perfils?usuario=${nombreUsuario}`;  // Redirigir a perfil.html con el nombre
+        }
+    </script>
+
+    <main class="container">
+        <section class="main-content">
+            <div class="form-register">
+                <h2 class="regis">Registro</h2>
+                <form id="registroForm" enctype="multipart/form-data">
+                    <input type="text" class="controls" name="nombre" id="nombre" placeholder="Ingrese su(s) nombre(s)"
+                        required>
+                    <input type="text" class="controls" name="paterno" id="paterno"
+                        placeholder="Ingrese apellido paterno" required>
+                    <input type="text" class="controls" name="materno" id="materno"
+                        placeholder="Ingrese apellido materno" required>
+                    <input type="text" class="controls" name="direccion" id="direccion"
+                        placeholder="Ingrese su dirección" required>
+                    <input type="email" class="controls" name="correo" id="correo" placeholder="Ingrese su correo"
+                        required>
+                    <input type="password" class="controls" name="password" id="password"
+                        placeholder="Ingrese su contraseña" required>
+                    <h3>Sexo</h3>
+                    <div class="sexo-container">
+                        <label>
+                            <input type="radio" name="sexo" value="Masculino"> Masculino
+                        </label>
+                        <label>
+                            <input type="radio" name="sexo" value="Femenino"> Femenino
+                        </label>
+                    </div>
+                    <h3>País</h3>
+                    <select id="Pais" name="Pais">
+                        <option value="mexico">México</option>
+                        <option value="eua">Estados Unidos</option>
+                        <option value="japon">Japón</option>
+                        <option value="canada">Canadá</option>
+                        <option value="brasil">Brasil</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="españa">España</option>
+                        <option value="francia">Francia</option>
+                        <option value="alemania">Alemania</option>
+                        <option value="italia">Italia</option>
+                        <option value="reino_unido">Reino Unido</option>
+                        <option value="china">China</option>
+                        <option value="india">India</option>
+                        <option value="rusia">Rusia</option>
+                        <option value="australia">Australia</option>
+                        <option value="corea_sur">Corea del Sur</option>
+                        <option value="sudafrica">Sudáfrica</option>
+                    </select>
+
+                    <br><br>
+                    <label for="cp">Código Postal:</label>
+                    <input type="text" class="controls" id="cp" placeholder="Ingrese su código postal">
+                    <label for="ciudad">Ciudad:</label>
+                    <input type="text" class="controls" id="ciudad" placeholder="Ciudad" readonly>
+                    <label for="estado">Estado:</label>
+                    <input type="text" class="controls" id="estado" placeholder="Estado" readonly>
+
+                    <label for="foto">Subir Foto de Perfil:</label>
+                    <input type="file" id="foto" name="foto" accept="image/*">
+
+                    <button type="submit" class="botons">Registrar</button>
+                </form>
+            </div>
+        </section>
+        <aside class="sidebar">
+            <h2>Prueba Nuevos Juegos</h2>
+            <div>
+                <img class="juegosV" src="/Images/pagina/horizon.jpg" alt="Horizon">
+            </div>
+            <div>
+                <img class="juegosV" src="/Images/pagina/spiterman.jpg" alt="Horizon">
+            </div>
+            <div>
+                <img class="juegosV" src="/Images/pagina/god-of-war.jpg" alt="God of War">
+            </div>
+            <div>
+                <img class="juegosV" src="/Images/pagina/uncharted.png" alt="God of War">
+            </div>
+        </aside>
+    </main>
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <script>
+        function toggleMenu() {
+            const navList = document.querySelector('.nav-list');
+            navList.classList.toggle('show');
+        }
+    </script>
+    <div class="elfsight-app-e4023fe3-a8f0-4a0c-a7dc-90770e771113" data-elfsight-app-lazy></div>
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+</body>
+
+</html>

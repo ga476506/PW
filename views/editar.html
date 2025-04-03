@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <script src="/JS/editar.js"></script>
+    <script src="/JS/login.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/">
+                <img class="logo" src="/Images/pagina/play.png" alt="Logo">
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="#">Juegos</a></li>
+                    <li><a href="login">Ingresar</a></li>
+                    <li><a href="formulario">Formulario</a></li>
+                </ul>
+            </nav>
+            <!-- Contenedor de usuario (invisible hasta que inicie sesión) -->
+            <div id="usuario-info" style="display: none;" onclick="toggleUserMenu()">
+                <img id="foto-usuario" src="" alt="Foto de perfil">
+                <span id="nombre-usuario"></span>
+            </div>
+
+            <!-- Menú desplegable de usuario (invisible hasta que inicie sesión) -->
+            <div id="user-menu" style="display: none;">
+                <img id="foto-usuario-menu" src="" alt="Foto de perfil">
+                <span id="nombre-usuario-menu"></span>
+                <button onclick="redirigirPerfil()" id="editarPerfilBtn">Editar perfil</button>
+                <button id="cerrar-sesion" onclick="cerrarSesion()">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            const navList = document.querySelector('.nav-list');
+            navList.classList.toggle('show');
+        }
+        function redirigirPerfil() {
+            const nombreUsuario = document.getElementById('nombre-usuario').textContent;  // Obtener el nombre de usuario
+            window.location.href = `/perfils?usuario=${nombreUsuario}`;  // Redirigir a perfil.html con el nombre
+        }
+    </script>
+    <h1>Editar Usuario</h1>
+    <form id="edit-form">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="paterno">Apellido Paterno:</label>
+        <input type="text" id="paterno" name="paterno" required><br><br>
+
+        <label for="materno">Apellido Materno:</label>
+        <input type="text" id="materno" name="materno" required><br><br>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required><br><br>
+
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" required><br><br>
+
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo" required>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+        </select><br><br>
+
+        <label for="pais">País:</label>
+        <input type="text" id="pais" name="pais" required><br><br>
+
+        <label for="cp">Código Postal:</label>
+        <input type="text" id="cp" name="cp" required><br><br>
+
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" name="ciudad" required><br><br>
+
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" name="estado" required><br><br>
+
+        <button type="submit">Guardar Cambios</button>
+    </form>
+
+    <script src="/JS/editar.js"></script> <!-- Aquí incluirás el código JS -->
+</body>
+</html>

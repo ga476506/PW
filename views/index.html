@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayStation</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <script src="/JS/login.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="/">
+                <img class="logo" src="/Images/pagina/play.png" alt="Logo">
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="#">Juegos</a></li>
+                    <li><a href="login">Ingresar</a></li>
+                    <li><a href="formulario">Formulario</a></li>
+                </ul>
+            </nav>
+            <!-- Contenedor de usuario (invisible hasta que inicie sesión) -->
+            <div id="usuario-info" style="display: none;" onclick="toggleUserMenu()">
+                <img id="foto-usuario" src="" alt="Foto de perfil">
+                <span id="nombre-usuario"></span>
+            </div>
+
+            <!-- Menú desplegable de usuario (invisible hasta que inicie sesión) -->
+            <div id="user-menu" style="display: none;">
+                <img id="foto-usuario-menu" src="" alt="Foto de perfil">
+                <span id="nombre-usuario-menu"></span>
+                <button onclick="redirigirPerfil()" id="editarPerfilBtn">Editar perfil</button>
+                <button id="cerrar-sesion" onclick="cerrarSesion()">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            const navList = document.querySelector('.nav-list');
+            navList.classList.toggle('show');
+        }
+        function redirigirPerfil() {
+            const nombreUsuario = document.getElementById('nombre-usuario').textContent;  // Obtener el nombre de usuario
+            window.location.href = `/perfils?usuario=${nombreUsuario}`;  // Redirigir a perfil.html con el nombre
+        }
+    </script>
+
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div class="elfsight-app-c107effa-55a0-4542-8155-c2c93e37b960" data-elfsight-app-lazy></div>
+
+    <main class="container">
+        <section class="main-content">
+            <h2>Juegos</h2>
+            <p>PlayStation tiene una amplia selección de juegos, muchos de ellos exclusivos. Aquí hay algunos títulos
+                que podrían interesarte:</p>
+
+            <div>
+                <h3>Days Gone</h3>
+                <p>El motorista Deacon St. John es un hombre feliz, pero todo cambia cuando la infección empieza a
+                    propagarse por los Estados Unidos...</p>
+                <div class="conImg">
+                    <img src="/Images/pagina/daysgone1.jpg" alt="Days Gone">
+                    <img src="/Images/pagina/daysgone2.jpg" alt="Days Gone">
+                    <img src="/Images/pagina/daysgone3.png" alt="Days Gone">
+                    <img src="/Images/pagina/daysgone4.png" alt="Days Gone">
+                    <img src="/Images/pagina/daysgone5.png" alt="Days Gone">
+                </div>
+            </div>
+
+            <div>
+                <h3>The Last of Us</h3>
+                <p>En una civilización devastada donde se enfrentan infectados e insensibilizados sobrevivientes...</p>
+                <div class="conImg">
+                    <img src="/Images/pagina/thelastofus1.jpg" alt="The Last of Us">
+                    <img src="/Images/pagina/thelastofus2.jpg" alt="The Last of Us">
+                    <img src="/Images/pagina/thelastofus3.png" alt="The Last of Us">
+                    <img src="/Images/pagina/thelastofus4.jpg" alt="The Last of Us">
+                    <img src="/Images/pagina/thelastofus5.png" alt="The Last of Us">
+                </div>
+            </div>
+
+            <div>
+                <h3>The Last of Us 2</h3>
+                <p>En una civilización devastada donde se enfrentan infectados e insensibilizados sobrevivientes...</p>
+                <div class="conImg">
+                    <img src="/Images/pagina/thelast1.jpg" alt="The Last of Us">
+                    <img src="/Images/pagina/thelast2.jpg" alt="The Last of Us">
+                    <img src="/Images/pagina/thelast3.jpg" alt="The Last of Us">
+                    <img src="/Images/pagina/thelast4.jpg" alt="The Last of Us">
+                    <img src="/Images/pagina/thelast5.png" alt="The Last of Us">
+                </div>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <h2>Prueba Nuevos Juegos</h2>
+            <div>
+                <img class="juegosV" src="/Images/pagina/horizon.jpg" alt="Horizon">
+            </div>
+            <div>
+                <img class="juegosV" src="/Images/pagina/spiterman.jpg" alt="Horizon">
+            </div>
+            <div>
+                <img class="juegosV" src="/Images/pagina/god-of-war.jpg" alt="God of War">
+            </div>
+            <div>
+                <img class="juegosV" src="/Images/pagina/uncharted.png" alt="God of War">
+            </div>
+        </aside>
+    </main>
+</body>
+
+</html>
