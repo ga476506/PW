@@ -1,0 +1,227 @@
+header {
+    background-color: #1E40AF;
+    color: white;
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    margin: 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 2rem;
+}
+
+/* Logo - Oculto según la imagen de referencia */
+.logo {
+    display: none;
+}
+
+/* Menú de navegación principal */
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #EFF6FF;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Área de usuario */
+#usuario-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    margin-left: 1.5rem;
+}
+
+#usuario-info:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#foto-usuario {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#nombre-usuario {
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+/* Menú desplegable de usuario */
+#user-menu {
+    position: absolute;
+    top: 70px;
+    right: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 1.2rem;
+    width: 220px;
+    display: none;
+    z-index: 1001;
+}
+
+#user-menu.show {
+    display: block;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#foto-usuario-menu {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 0.8rem;
+    object-fit: cover;
+    border: 3px solid #f3f4f6;
+}
+
+#nombre-usuario-menu {
+    display: block;
+    text-align: center;
+    color: #1F2937;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+#user-menu button {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+#editarPerfilBtn {
+    background-color: #3B82F6;
+    color: white;
+}
+
+#cerrar-sesion {
+    background-color: #EF4444;
+    color: white;
+}
+
+#user-menu button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Menú móvil - Oculto en desktop */
+.menu-toggle {
+    display: none;
+}
+
+/* ===================== */
+/* RESPONSIVE DESIGN */
+/* ===================== */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #1E40AF;
+        padding: 1rem;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        display: none;
+    }
+
+    nav.show {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        padding: 0.8rem;
+        display: block;
+    }
+
+    nav a::after {
+        display: none;
+    }
+
+    #usuario-info {
+        margin-left: auto;
+    }
+
+    #user-menu {
+        right: 1.5rem;
+    }
+}

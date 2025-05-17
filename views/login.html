@@ -13,15 +13,14 @@
     <header>
         <div class="header-container">
             <a href="/">
-                <img class="logo" src="/Images/pagina/play.png" alt="Logo">
+                <img class="logo" src="/Images/pagina/logo.webp" alt="Logo">
             </a>
             <button class="menu-toggle" onclick="toggleMenu()">☰</button>
             <nav>
                 <ul class="nav-list">
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="#">Juegos</a></li>
-                    <li><a href="login">Ingresar</a></li>
-                    <li><a href="formulario">Formulario</a></li>
+                    <li><a href="cursos">cursos</a></li>
+                    <li><a href="misCursos">Mis Cursos</a></li>
+                    <li id="enlace-ingresar"><a href="login">Ingresar</a></li>
                 </ul>
             </nav>
             <!-- Contenedor de usuario (invisible hasta que inicie sesión) -->
@@ -53,6 +52,7 @@
     <form id="login-form">
         <input type="email" id="correo" placeholder="Correo electrónico" required>
         <input type="password" id="password" placeholder="Contraseña" required>
+        <p>no tienes cuenta? <a href="formulario">registrate</a></p>
         <button type="submit">Iniciar sesión</button>
     </form>
 </body>

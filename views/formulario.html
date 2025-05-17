@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlayStation</title>
     <link rel="stylesheet" href="/CSS/styles.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Agregar jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/JS/subidaForm.js"></script>
     <script src="/JS/cp.js"></script>
     <script src="/JS/login.js"></script>
@@ -17,15 +17,14 @@
     <header>
         <div class="header-container">
             <a href="/">
-                <img class="logo" src="/Images/pagina/play.png" alt="Logo">
+                <img class="logo" src="/Images/pagina/logo.webp" alt="Logo">
             </a>
             <button class="menu-toggle" onclick="toggleMenu()">☰</button>
             <nav>
                 <ul class="nav-list">
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="#">Juegos</a></li>
-                    <li><a href="login">Ingresar</a></li>
-                    <li><a href="formulario">Formulario</a></li>
+                    <li><a href="cursos">cursos</a></li>
+                    <li><a href="misCursos">Mis Cursos</a></li>
+                    <li id="enlace-ingresar"><a href="login">Ingresar</a></li>
                 </ul>
             </nav>
             <!-- Contenedor de usuario (invisible hasta que inicie sesión) -->
@@ -117,18 +116,25 @@
             </div>
         </section>
         <aside class="sidebar">
-            <h2>Prueba Nuevos Juegos</h2>
+            <h2>Amplia tus conocimientos</h2>
             <div>
-                <img class="juegosV" src="/Images/pagina/horizon.jpg" alt="Horizon">
+                <img class="juegosV" src="/Images/pagina/aa.webp" alt="Horizon">
             </div>
+            <br><br>
             <div>
-                <img class="juegosV" src="/Images/pagina/spiterman.jpg" alt="Horizon">
+                <img class="juegosV" src="/Images/pagina/sqlite.webp" alt="Horizon">
             </div>
+            <br><br>
             <div>
-                <img class="juegosV" src="/Images/pagina/god-of-war.jpg" alt="God of War">
+                <img class="juegosV" src="/Images/pagina/postman.webp" alt="God of War">
             </div>
+            <br><br>
             <div>
-                <img class="juegosV" src="/Images/pagina/uncharted.png" alt="God of War">
+                <img class="juegosV" src="/Images/pagina/React.webp" alt="God of War">
+            </div>
+            <br><br>
+            <div>
+                <img class="juegosV" src="/Images/pagina/php.webp" alt="God of War">
             </div>
         </aside>
     </main>

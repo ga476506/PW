@@ -1,4 +1,4 @@
-/* Estilos base */
+
 *,
 *::before,
 *::after {
@@ -475,14 +475,17 @@ button:hover {
     padding: 10px;
     background-color: #f4f4f4;
     border-radius: 5px;
-    margin-left: auto; /* Alinea el contenido a la derecha */
+    margin-left: auto;
+    /* Alinea el contenido a la derecha */
 }
 
 #foto-usuario {
     width: 40px;
     height: 40px;
-    border-radius: 50%; /* Hace que la imagen sea redonda */
-    margin-right: 10px; /* Espacio entre la foto y el nombre */
+    border-radius: 50%;
+    /* Hace que la imagen sea redonda */
+    margin-right: 10px;
+    /* Espacio entre la foto y el nombre */
 }
 
 #nombre-usuario {
@@ -508,15 +511,18 @@ button:hover {
 /* Menú desplegable del usuario (invisible hasta hacer clic) */
 #user-menu {
     position: absolute;
-    top: 60px; /* Ajusta según la altura del header */
+    top: 60px;
+    /* Ajusta según la altura del header */
     right: 10px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 10px;
     width: 200px;
-    display: none; /* Inicialmente oculto */
-    z-index: 1000; /* Asegura que el menú se muestre encima de otros elementos */
+    display: none;
+    /* Inicialmente oculto */
+    z-index: 1000;
+    /* Asegura que el menú se muestre encima de otros elementos */
 }
 
 /* Estilos para el avatar dentro del menú */
@@ -525,7 +531,7 @@ button:hover {
     height: 50px;
     border-radius: 50%;
     margin-bottom: 10px;
-    
+
 }
 
 /* Estilos para el nombre dentro del menú */
@@ -540,16 +546,20 @@ button:hover {
 /* Menú desplegable del usuario (invisible hasta hacer clic) */
 #user-menu {
     position: absolute;
-    top: 60px; /* Ajusta según la altura del header */
+    top: 60px;
+    /* Ajusta según la altura del header */
     right: 10px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 10px;
     width: 200px;
-    display: none; /* Inicialmente oculto */
-    z-index: 1000; /* Asegura que el menú se muestre encima de otros elementos */
-    text-align: center; /* Centra los elementos dentro del menú */
+    display: none;
+    /* Inicialmente oculto */
+    z-index: 1000;
+    /* Asegura que el menú se muestre encima de otros elementos */
+    text-align: center;
+    /* Centra los elementos dentro del menú */
 }
 
 /* Estilos para el avatar dentro del menú */
@@ -558,9 +568,12 @@ button:hover {
     height: 50px;
     border-radius: 50%;
     margin-bottom: 10px;
-    display: block; /* Hace que el avatar sea un bloque */
-    margin-left: auto; /* Centra el avatar horizontalmente */
-    margin-right: auto; /* Centra el avatar horizontalmente */
+    display: block;
+    /* Hace que el avatar sea un bloque */
+    margin-left: auto;
+    /* Centra el avatar horizontalmente */
+    margin-right: auto;
+    /* Centra el avatar horizontalmente */
 }
 
 /* Estilos para el nombre dentro del menú */
@@ -576,32 +589,38 @@ button:hover {
 #user-menu button#cerrar-sesion {
     width: 100%;
     padding: 8px;
-    background-color: #f44336; /* Color rojo para el botón de cerrar sesión */
+    background-color: #f44336;
+    /* Color rojo para el botón de cerrar sesión */
     color: #fff;
     border: none;
     border-radius: 4px;
     font-size: 14px;
     cursor: pointer;
     text-align: center;
-    outline: none; /* Elimina el borde por defecto que puede aparecer al hacer clic */
+    outline: none;
+    /* Elimina el borde por defecto que puede aparecer al hacer clic */
 }
 
 /* Efecto hover para el botón de cerrar sesión */
 #user-menu button#cerrar-sesion:hover {
-    background-color: #d32f2f; /* Mantiene el rojo oscuro cuando se pasa el ratón */
-    border: none; /* Elimina cualquier borde azul o inesperado */
+    background-color: #d32f2f;
+    /* Mantiene el rojo oscuro cuando se pasa el ratón */
+    border: none;
+    /* Elimina cualquier borde azul o inesperado */
 }
 
 /* Evitar el borde azul que aparece en algunos navegadores */
 #user-menu button#cerrar-sesion:focus {
-    outline: none; /* Evita el borde azul de enfoque */
+    outline: none;
+    /* Evita el borde azul de enfoque */
 }
 
 /* Estilo para el botón de cargar imagen (verde) */
 #cargar-avatar-btn {
     width: 100%;
     padding: 8px;
-    background-color: #4CAF50; /* Color verde */
+    background-color: #4CAF50;
+    /* Color verde */
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -622,18 +641,23 @@ button:hover {
 
 /* Estilos para cuando el menú se activa */
 #usuario-info:hover {
-    color: red; /* Cambia el color al pasar el ratón */
+    color: red;
+    /* Cambia el color al pasar el ratón */
 }
+
 /* Contenedor de los radios */
 .sexo-container {
     display: flex;
-    align-items: center; /* Alinea verticalmente los elementos */
-    gap: 20px; /* Espacio entre los elementos */
+    align-items: center;
+    /* Alinea verticalmente los elementos */
+    gap: 20px;
+    /* Espacio entre los elementos */
 }
 
 /* Estilo para los radios y etiquetas */
 .sexo-container input[type="radio"] {
-    margin-right: 5px; /* Espacio entre el radio y su etiqueta */
+    margin-right: 5px;
+    /* Espacio entre el radio y su etiqueta */
 }
 
 /* Estilo general para la tabla */
@@ -641,45 +665,47 @@ button:hover {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-  }
-  
-  /* Estilos para las celdas de la tabla */
-  #usuarios-table th, #usuarios-table td {
+}
+
+/* Estilos para las celdas de la tabla */
+#usuarios-table th,
+#usuarios-table td {
     padding: 12px;
     text-align: left;
     border: 1px solid #ddd;
-  }
-  
-  /* Fondo y color del encabezado de la tabla */
-  #usuarios-table th {
+}
+
+/* Fondo y color del encabezado de la tabla */
+#usuarios-table th {
     background-color: #4CAF50;
     color: white;
-  }
-  
-  /* Estilo para las filas alternas */
-  #usuarios-table tr:nth-child(even) {
+}
+
+/* Estilo para las filas alternas */
+#usuarios-table tr:nth-child(even) {
     background-color: #f2f2f2;
-  }
-  
-  /* Estilo para las filas cuando se pasa el ratón */
-  #usuarios-table tr:hover {
+}
+
+/* Estilo para las filas cuando se pasa el ratón */
+#usuarios-table tr:hover {
     background-color: #ddd;
-  }
-  
-  /* Estilo de las celdas cuando no hay datos */
-  #usuarios-table td[colspan] {
+}
+
+/* Estilo de las celdas cuando no hay datos */
+#usuarios-table td[colspan] {
     text-align: center;
     font-style: italic;
     color: #888;
-  }
-  
-  /* Tamaño de la fuente en la tabla */
-  #usuarios-table td, #usuarios-table th {
+}
+
+/* Tamaño de la fuente en la tabla */
+#usuarios-table td,
+#usuarios-table th {
     font-family: Arial, sans-serif;
     font-size: 14px;
-  }
+}
 
-  /* Estilos para los botones de editar y eliminar */
+/* Estilos para los botones de editar y eliminar */
 button {
     padding: 6px 12px;
     font-size: 14px;
@@ -687,24 +713,27 @@ button {
     border-radius: 4px;
     cursor: pointer;
     margin: 2px;
-  }
-  
-  button.edit-btn {
-    background-color: #4CAF50; /* Color verde para editar */
+}
+
+button.edit-btn {
+    background-color: #4CAF50;
+    /* Color verde para editar */
     color: white;
-  }
-  
-  button.delete-btn {
-    background-color: #f44336; /* Color rojo para eliminar */
+}
+
+button.delete-btn {
+    background-color: #f44336;
+    /* Color rojo para eliminar */
     color: white;
-  }
-  
-  button:hover {
-    opacity: 0.8; /* Efecto de hover */
-  }
-  
-  /* Estilo general para la columna de acciones */
-  th, td {
+}
+
+button:hover {
+    opacity: 0.8;
+    /* Efecto de hover */
+}
+
+/* Estilo general para la columna de acciones */
+th,
+td {
     text-align: center;
-  }
-  
+}

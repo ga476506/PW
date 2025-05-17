@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="/CSS/misCursos.css">
+    <script src="/JS/login.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/">
+                <img class="logo" src="/Images/pagina/logo.webp" alt="Logo">
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="cursos">cursos</a></li>
+                    <li><a href="misCursos">Mis Cursos</a></li>
+                    <li id="enlace-ingresar"><a href="login">Ingresar</a></li>
+                </ul>
+            </nav>
+            <!-- Contenedor de usuario (invisible hasta que inicie sesión) -->
+            <div id="usuario-info" style="display: none;" onclick="toggleUserMenu()">
+                <img id="foto-usuario" src="" alt="Foto de perfil">
+                <span id="nombre-usuario"></span>
+            </div>
+
+            <!-- Menú desplegable de usuario (invisible hasta que inicie sesión) -->
+            <div id="user-menu" style="display: none;">
+                <img id="foto-usuario-menu" src="" alt="Foto de perfil">
+                <span id="nombre-usuario-menu"></span>
+                <button onclick="redirigirPerfil()" id="editarPerfilBtn">Editar perfil</button>
+                <button id="cerrar-sesion" onclick="cerrarSesion()">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
+    <script>
+        function toggleMenu() {
+            const navList = document.querySelector('.nav-list');
+            navList.classList.toggle('show');
+        }
+        function redirigirPerfil() {
+            const nombreUsuario = document.getElementById('nombre-usuario').textContent;  // Obtener el nombre de usuario
+            window.location.href = `/perfils?usuario=${nombreUsuario}`;  // Redirigir a perfil.html con el nombre
+        }
+    </script>
+    <div id="mis-cursos-container"></div>
+    <script src="/JS/misCursos.js"></script>
+</body>
+
+</html>

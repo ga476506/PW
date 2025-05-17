@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contenido del Curso</title>
+    <link rel="stylesheet" href="/CSS/curso.css">
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <script src="/JS/login.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/">
+                <img class="logo" src="/Images/pagina/logo.webp" alt="Logo">
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="cursos">cursos</a></li>
+                    <li><a href="misCursos">Mis Cursos</a></li>
+                    <li id="enlace-ingresar"><a href="login">Ingresar</a></li>
+                </ul>
+            </nav>
+            <div id="usuario-info" style="display: none;" onclick="toggleUserMenu()">
+                <img id="foto-usuario" src="" alt="Foto de perfil">
+                <span id="nombre-usuario"></span>
+            </div>
+
+            <div id="user-menu" style="display: none;">
+                <img id="foto-usuario-menu" src="" alt="Foto de perfil">
+                <span id="nombre-usuario-menu"></span>
+                <button onclick="redirigirPerfil()" id="editarPerfilBtn">Editar perfil</button>
+                <button id="cerrar-sesion" onclick="cerrarSesion()">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
+    <script>
+        function toggleMenu() {
+            const navList = document.querySelector('.nav-list');
+            navList.classList.toggle('show');
+        }
+        function redirigirPerfil() {
+            const nombreUsuario = document.getElementById('nombre-usuario').textContent;  // Obtener el nombre de usuario
+            window.location.href = `/perfils?usuario=${nombreUsuario}`;  // Redirigir a perfil.html con el nombre
+        }
+    </script>
+    <div id="curso-container">
+        <h1 id="titulo"></h1>
+        <p id="descripcion"></p>
+        <div class="curso-layout">
+            <div id="archivos-contenido" class="curso-contenido"></div>
+            <div id="archivos-botones" class="curso-botones"></div>
+        </div>
+    </div>
+
+    <script src="/JS/curso.js"></script>
+</body>
+
+</html>

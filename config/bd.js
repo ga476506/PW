@@ -1,19 +1,21 @@
+require('dotenv').config();
 const mysql = require('mysql2');
 
-// Configura la conexión a MySQL
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',  // tu usuario de MySQL
-  password: '230904',  // tu contraseña de MySQL
-  database: 'PW'  // nombre de tu base de datos
+// Conexión única envuelta en promesas, usando variables de entorno
+const connection = mysql.createConnection({
+  host: process.env.DB_HOST || 'localhost',
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME || 'PW'
 });
 
-db.connect(err => {
+// Manejo de errores de conexión
+connection.connect(err => {
   if (err) {
-    console.error('Error conectando a la base de datos: ' + err.stack);
+    console.error('Error al conectar a la base de datos:', err.stack);
     return;
   }
-  console.log('Conectado a la base de datos MySQL con ID: ' + db.threadId);
+  console.log('Conectado a la base de datos como id', connection.threadId);
 });
 
-module.exports = db;
+module.exports = connection.promise();

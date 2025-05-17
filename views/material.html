@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creador de Material Educativo</title>
+    <link rel="stylesheet" href="/CSS/material.css">
+    <link rel="stylesheet" href="/CSS/header.css">
+    <script src="/JS/material.js"></script>
+    <script src="/JS/login.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/">
+                <img class="logo" src="/Images/pagina/logo.webp" alt="Logo">
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="/">inicio</a></li>
+                    <li><a href="cursos">cursos</a></li>
+                    <li><a href="misCursos">Mis Cursos</a></li>
+                    <li id="enlace-ingresar"><a href="login">Ingresar</a></li>
+                </ul>
+            </nav>  
+            <!-- Contenedor de usuario (invisible hasta que inicie sesión) -->
+            <div id="usuario-info" style="display: none;" onclick="toggleUserMenu()">
+                <img id="foto-usuario" src="" alt="Foto de perfil">
+                <span id="nombre-usuario"></span>
+            </div>
+
+            <!-- Menú desplegable de usuario (invisible hasta que inicie sesión) -->
+            <div id="user-menu" style="display: none;">
+                <img id="foto-usuario-menu" src="" alt="Foto de perfil">
+                <span id="nombre-usuario-menu"></span>
+                <button onclick="redirigirPerfil()" id="editarPerfilBtn">Editar perfil</button>
+                <button id="cerrar-sesion" onclick="cerrarSesion()">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            const navList = document.querySelector('.nav-list');
+            navList.classList.toggle('show');
+        }
+        function redirigirPerfil() {
+            const nombreUsuario = document.getElementById('nombre-usuario').textContent;  // Obtener el nombre de usuario
+            window.location.href = `/perfils?usuario=${nombreUsuario}`;  // Redirigir a perfil.html con el nombre
+        }
+    </script>
+
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="crossword">✏️ Crucigrama</button>
+        <button class="tab-btn" data-tab="wordsearch">🔍 Sopa de Letras</button>
+        <button class="tab-btn" data-tab="quiz">❓ Cuestionario</button>
+    </div>
+
+    <div class="tab-content active" id="crossword">
+        <div class="creator-panel">
+            <h2>✏️ Creador de Crucigramas</h2>
+            <div class="form-group">
+                <label for="crossword-word">Palabra:</label>
+                <input type="text" id="crossword-word" placeholder="Ej: PYTHON">
+                
+                <label for="crossword-clue">Pista:</label>
+                <input type="text" id="crossword-clue" placeholder="Ej: Lenguaje de programación">
+                
+                <div class="form-row">
+                    <div>
+                        <label for="crossword-row">Fila (0-14):</label>
+                        <input type="number" id="crossword-row" min="0" max="14" placeholder="0">
+                    </div>
+                    <div>
+                        <label for="crossword-col">Columna (0-14):</label>
+                        <input type="number" id="crossword-col" min="0" max="14" placeholder="0">
+                    </div>
+                    <div>
+                        <label for="crossword-direction">Dirección:</label>
+                        <select id="crossword-direction">
+                            <option value="across">Horizontal</option>
+                            <option value="down">Vertical</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="add-crossword-word">➕ Añadir Palabra</button>
+            </div>
+            
+            <div id="crossword-grid" class="grid"></div>
+            <div id="crossword-words" class="word-list"></div>
+            
+            <div class="action-buttons">
+                <button id="export-crossword">📤 Exportar (2 versiones)</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="wordsearch">
+        <div class="creator-panel">
+            <h2>🔍 Creador de Sopas de Letras</h2>
+            <div class="form-group">
+                <label for="wordsearch-word">Palabra:</label>
+                <div class="input-group">
+                    <input type="text" id="wordsearch-word" placeholder="Ej: JAVASCRIPT">
+                    <button id="add-wordsearch-word">➕ Añadir</button>
+                </div>
+            </div>
+            
+            <div id="wordsearch-grid" class="grid"></div>
+            <div id="wordsearch-words" class="word-list"></div>
+            
+            <div class="action-buttons">
+                <button id="generate-wordsearch">🔄 Generar Sopa</button>
+                <button id="export-wordsearch">📤 Exportar PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="quiz">
+        <div class="creator-panel">
+            <h2>❓ Creador de Cuestionarios</h2>
+            <div class="form-group">
+                <label for="quiz-question">Pregunta:</label>
+                <input type="text" id="quiz-question" placeholder="Ej: ¿Qué lenguaje se ejecuta en el navegador?">
+                
+                <label>Opciones:</label>
+                <div class="options-grid">
+                    <input type="text" class="quiz-option" placeholder="Opción 1">
+                    <input type="text" class="quiz-option" placeholder="Opción 2">
+                    <input type="text" class="quiz-option" placeholder="Opción 3">
+                    <input type="text" class="quiz-option" placeholder="Opción 4">
+                </div>
+                
+                <label for="quiz-correct">Respuesta correcta:</label>
+                <select id="quiz-correct">
+                    <option value="0">Opción 1</option>
+                    <option value="1">Opción 2</option>
+                    <option value="2">Opción 3</option>
+                    <option value="3">Opción 4</option>
+                </select>
+                
+                <button id="add-quiz-question">➕ Añadir Pregunta</button>
+            </div>
+            
+            <div id="quiz-questions" class="questions-container"></div>
+            
+            <div class="action-buttons">
+                <button id="export-quiz">📤 Exportar (2 versiones)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>
